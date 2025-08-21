@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Editorial Gallery</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    .fade-in {
+      animation: fadeIn 1.0s ease-in-out;
+    }
+
+    @keyframes fadeIn {
+      from {
+        opacity: 0;
+        transform: scale(0.95);
+      }
+      to {
+        opacity: 1;
+        transform: scale(1);
+      }
+    }
+  </style>
+</head>
+<body class="bg-[#f9f8ee] text-[#3d2f0f] font-sans">
+
+  <!-- Header -->
+  <header class="flex items-center gap-4 p-6 bg-[#3d2f0f] text-white text-xl font-bold">
+    <button onclick="history.back()" class="text-white bg-[#6b5b36] px-3 py-1 rounded hover:bg-[#857243] transition">← Back</button>
+    Editorial Makeup Gallery
+  </header>
+
+  <!-- Gallery -->
+  <main class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4 p-6">
+    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRMVAHtNdV3jmHOXID-crvOixp9zGH3NM1gJw&s.jpg.jpg" class="w-full h-64 object-cover cursor-pointer" onclick="openModal(this.src)" />
+    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTRhcJqgVbDnZBRdFlDMqrLy4tYZ61C5HkEAQ&s.jpg" class="w-full h-64 object-cover cursor-pointer" onclick="openModal(this.src)" />
+    <img src="bridal3.jpg" class="w-full h-64 object-cover cursor-pointer" onclick="openModal(this.src)" />
+    <img src="bridal4.jpg" class="w-full h-64 object-cover cursor-pointer" onclick="openModal(this.src)" />
+    <img src="bridal5.jpg" class="w-full h-64 object-cover cursor-pointer" onclick="openModal(this.src)" />
+    <img src="bridal6.jpg" class="w-full h-64 object-cover cursor-pointer" onclick="openModal(this.src)" />
+  </main>
+
+  <!-- Modal -->
+  <!-- Carousel Modal -->
+<div id="carouselModal" class="hidden fixed inset-0 bg-black bg-opacity-80 flex items-center justify-center z-50">
+  <div class="relative w-[90vw] max-w-4xl">
+    <span onclick="closeCarousel()" class="absolute top-2 right-4 text-white text-4xl cursor-pointer z-50">&times;</span>
+
+    <!-- Left arrow -->
+    <button onclick="prevSlide()" class="absolute left-0 top-1/2 transform -translate-y-1/2 text-white text-4xl px-4 z-50">&#10094;</button>
+
+    <!-- Image display -->
+    <img id="carouselImg" class="w-full max-h-[90vh] rounded-lg object-contain shadow-2xl fade-in" />
+
+    <!-- Right arrow -->
+    <button onclick="nextSlide()" class="absolute right-0 top-1/2 transform -translate-y-1/2 text-white text-4xl px-4 z-50">&#10095;</button>
+  </div>
+</div>
+
+
+  <!-- Footer -->
+  <footer class="text-center p-4 text-sm text-gray-500">© 2025 Kael Flynn</footer>
+
+  <script>
+  const images = [
+    'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRMVAHtNdV3jmHOXID-crvOixp9zGH3NM1gJw&s.jpg',
+    'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTRhcJqgVbDnZBRdFlDMqrLy4tYZ61C5HkEAQ&s.jpg',
+    'bridal3.jpg',
+    'bridal4.jpg',
+    'bridal5.jpg',
+    'bridal6.jpg',
+  ];
+  let currentIndex = 0;
+
+  const modal = document.getElementById('carouselModal');
+  const modalImg = document.getElementById('carouselImg');
+
+  function openCarousel(index) {
+    currentIndex = index;
+    modal.classList.remove('hidden');
+    updateImage();
+  }
+
+  function updateImage() {
+    modalImg.src = images[currentIndex];
+  }
+
+  function closeCarousel() {
+    modal.classList.add('hidden');
+  }
+
+  function nextSlide() {
+    currentIndex = (currentIndex + 1) % images.length;
+    updateImage();
+  }
+
+  function prevSlide() {
+    currentIndex = (currentIndex - 1 + images.length) % images.length;
+    updateImage();
+  }
+
+  // Close on outside click
+  window.addEventListener('click', (e) => {
+    if (e.target === modal) closeCarousel();
+  });
+
+  // Hook into grid images
+  document.querySelectorAll('main img').forEach((img, i) => {
+    img.addEventListener('click', () => openCarousel(i));
+  });
+</script>
+</body>
+</html>
