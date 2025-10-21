@@ -142,6 +142,7 @@
 
     
   </style>
+  
 </head>
 <body class="text-[#3d2f0f] font-sans">
 
@@ -374,8 +375,30 @@
       
     });
   });
+document.addEventListener("DOMContentLoaded", () => {
+  const slider = document.querySelector('.slide-track');
+  if (!slider) return;
+
+  // Pause/resume on hover (desktop)
+  slider.addEventListener('mouseenter', () => {
+    slider.style.animationPlayState = 'paused';
+  });
+  slider.addEventListener('mouseleave', () => {
+    slider.style.animationPlayState = 'running';
+  });
+
+  // Pause/resume on touch (mobile)
+  slider.addEventListener('touchstart', () => {
+    slider.style.animationPlayState = 'paused';
+  });
+  slider.addEventListener('touchend', () => {
+    slider.style.animationPlayState = 'running';
+  });
+});
+
 </script>
 
 
 </body>
 </html>
+
