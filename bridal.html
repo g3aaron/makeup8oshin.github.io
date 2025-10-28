@@ -1,142 +1,120 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Bridal Gallery</title>
-  <script src="https://cdn.tailwindcss.com"></script>
-  <style>
-    .fade-in {
-      animation: fadeIn 1.0s ease-in-out;
-    }
-
-    @keyframes fadeIn {
-      from {
-        opacity: 0;
-        transform: scale(0.95);
-      }
-      to {
-        opacity: 1;
-        transform: scale(1);
-      }
-    }
-  </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Bridal Gallery</title>
+<script src="https://cdn.tailwindcss.com"></script>
+<style>
+  body { font-family: sans-serif; margin:0; }
+  .fade-in { animation: fadeIn 0.3s ease-in-out; }
+  @keyframes fadeIn { from { opacity:0; transform:scale(0.95); } to { opacity:1; transform:scale(1); } }
+  #carouselImg { transition: opacity 0.3s ease-in-out, transform 0.3s ease-in-out; }
+  #carouselModal { transition: opacity 0.3s ease; display:flex; align-items:center; justify-content:center; }
+  #carouselModal.hidden { opacity:0; pointer-events:none; }
+  #carouselCaption { background: rgba(0,0,0,0.5); padding: 0.5rem 1rem; border-radius: 0.5rem; }
+</style>
 </head>
 <body class="bg-[#f9f8ee] text-[#3d2f0f] font-sans">
 
-  <!-- Header -->
-  <header class="flex items-center gap-4 p-6 bg-[#3d2f0f] text-white text-xl font-bold">
-    <button onclick="history.back()" class="text-white bg-[#6b5b36] px-3 py-1 rounded hover:bg-[#857243] transition">← Back</button>
-    Bridal Makeup Gallery
-  </header>
+<header class="flex items-center gap-3 p-6 bg-[#3d2f0f] text-white text-lg font-semibold">
+  <button onclick="history.back()" 
+    class="text-white hover:text-[#e3dabf] transition text-base flex items-center">
+    ← Home |
+  </button>
+  <span class="text-xl">BRIDAL MAKEUP</span>
+</header>
 
-  <!-- Gallery -->
-  <main class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4 p-6">
-    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRMVAHtNdV3jmHOXID-crvOixp9zGH3NM1gJw&s" class="w-full h-64 object-cover cursor-pointer" onclick="openModal(this.src)" />
-    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTRhcJqgVbDnZBRdFlDMqrLy4tYZ61C5HkEAQ&s" class="w-full h-64 object-cover cursor-pointer" onclick="openModal(this.src)" />
-    <img src="bridal3.jpg" class="w-full h-64 object-cover cursor-pointer" onclick="openModal(this.src)" />
-    <img src="bridal4.jpg" class="w-full h-64 object-cover cursor-pointer" onclick="openModal(this.src)" />
-    <img src="bridal5.jpg" class="w-full h-64 object-cover cursor-pointer" onclick="openModal(this.src)" />
-    <img src="bridal6.jpg" class="w-full h-64 object-cover cursor-pointer" onclick="openModal(this.src)" />
-  </main>
 
-  <!-- Modal -->
-  <!-- Carousel Modal -->
-<div id="carouselModal" class="hidden fixed inset-0 bg-black bg-opacity-80 flex items-center justify-center z-50">
-  <div class="relative w-[90vw] max-w-4xl">
-    <span onclick="closeCarousel()" class="absolute top-2 right-4 text-white text-4xl cursor-pointer z-50">&times;</span>
+<main class="columns-2 md:columns-3 gap-4 p-6 space-y-4">
+  <!-- Replace images below with your Bridal / Occasion images -->
+  <img src="christian 1.jpg" alt="Bridal Look 1" loading="lazy" class="w-full rounded-lg cursor-pointer">
+  <img src="christian 2.jpg" alt="Bridal Look 2" loading="lazy" class="w-full rounded-lg cursor-pointer">
+  <img src="christian 3.jpg" alt="Bridal Look 3" loading="lazy" class="w-full rounded-lg cursor-pointer">
+  <img src="christian 4.jpg" alt="Bridal Look 4" loading="lazy" class="w-full rounded-lg cursor-pointer">
+  <img src="christian 5.jpg" alt="Bridal Look 5" loading="lazy" class="w-full rounded-lg cursor-pointer">
+  <img src="christian 6.jpg" alt="Bridal Look 6" loading="lazy" class="w-full rounded-lg cursor-pointer">
+</main>
 
-    <!-- Left arrow -->
-    <button onclick="prevSlide()" class="absolute left-0 top-1/2 transform -translate-y-1/2 text-white text-4xl px-4 z-50">&#10094;</button>
-
-    <!-- Image display -->
-    <img id="carouselImg" class="w-full max-h-[90vh] rounded-lg object-contain shadow-2xl fade-in" />
-
-    <p id="carouselCaption" class="text-center text-white mt-2 text-lg"></p>
-
-    <!-- Right arrow -->
-    <button onclick="nextSlide()" class="absolute right-0 top-1/2 transform -translate-y-1/2 text-white text-4xl px-4 z-50">&#10095;</button>
+<div id="carouselModal" class="hidden fixed inset-0 bg-black bg-opacity-95 z-50 flex items-center justify-center p-4">
+  <div class="relative w-full h-full flex items-center justify-center max-w-6xl max-h-[95vh]">
+    <span onclick="closeCarousel()" class="absolute top-4 right-6 text-white text-5xl cursor-pointer z-50">&times;</span>
+    <button onclick="prevSlide()" class="absolute left-4 top-1/2 transform -translate-y-1/2 text-white text-5xl z-50">&#10094;</button>
+    <img id="carouselImg" class="max-h-full max-w-full rounded-lg object-contain shadow-2xl fade-in cursor-grab touch-none" />
+    <p id="carouselCaption" class="absolute bottom-6 text-white text-lg text-center w-full"></p>
+    <button onclick="nextSlide()" class="absolute right-4 top-1/2 transform -translate-y-1/2 text-white text-5xl z-50">&#10095;</button>
   </div>
 </div>
 
+<footer class="text-center p-4 text-sm text-gray-500">© 2025 Oshin Salon</footer>
 
-  <!-- Footer -->
-  <footer class="text-center p-4 text-sm text-gray-500">© 2025 Kael Flynn</footer>
+<script>
+const modal = document.getElementById('carouselModal');
+const modalImg = document.getElementById('carouselImg');
+const caption = document.getElementById('carouselCaption');
+const thumbnails = Array.from(document.querySelectorAll('main img'));
+let currentIndex = 0;
 
-  <script>
-  const images = [
-    {
-      src: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRMVAHtNdV3jmHOXID-crvOixp9zGH3NM1gJw&s.jpg",
-      caption: "Bridal Look 1"
-    },
-    { src: "bridal2.jpg", caption: "Bridal Look 2" },
-    { src: "bridal3.jpg", caption: "Bridal Look 3" },
-    { src: "bridal4.jpg", caption: "Bridal Look 4" },
-    { src: "bridal5.jpg", caption: "Bridal Look 5" },
-    { src: "bridal6.jpg", caption: "Bridal Look 6" }
-  ];
-
-  let currentIndex = 0;
-  const modal = document.getElementById("carouselModal");
-  const modalImg = document.getElementById("carouselImg");
-  const captionEl = document.getElementById("carouselCaption");
-
-  function openCarousel(index) {
+// Open modal
+thumbnails.forEach((img, index) => {
+  img.addEventListener('click', () => {
     currentIndex = index;
-    modal.classList.remove("hidden");
+    modal.classList.remove('hidden');
+    resetZoom();
     updateImage();
-  }
-
-  function updateImage() {
-    modalImg.src = images[currentIndex].src;
-    captionEl.textContent = images[currentIndex].caption;
-  }
-
-  function closeCarousel() {
-    modal.classList.add("hidden");
-    modalImg.src = "";
-    captionEl.textContent = "";
-  }
-
-  function nextSlide() {
-    currentIndex = (currentIndex + 1) % images.length;
-    updateImage();
-  }
-
-  function prevSlide() {
-    currentIndex = (currentIndex - 1 + images.length) % images.length;
-    updateImage();
-  }
-
-  // Close when clicking outside image
-  modal.addEventListener("click", (e) => {
-    if (e.target === modal) closeCarousel();
   });
+});
 
-  // Add click listeners to grid images
-  document.querySelectorAll("main img").forEach((img, index) => {
-    img.addEventListener("click", () => openCarousel(index));
-  });
+// Update image & caption
+function updateImage() {
+  modalImg.classList.add("fade-out");
+  setTimeout(() => {
+    modalImg.src = thumbnails[currentIndex].src;
+    caption.textContent = thumbnails[currentIndex].alt || `Image ${currentIndex+1}`;
+    modalImg.classList.remove("fade-out");
+  }, 200);
+}
 
-  // === Swipe Support ===
-  let startX = 0;
+// Close modal
+function closeCarousel() { modal.classList.add('hidden'); }
 
-  modal.addEventListener("touchstart", (e) => {
-    startX = e.touches[0].clientX;
-  });
+// Next / prev
+function nextSlide() { currentIndex = (currentIndex+1)%thumbnails.length; resetZoom(); updateImage(); }
+function prevSlide() { currentIndex = (currentIndex-1+thumbnails.length)%thumbnails.length; resetZoom(); updateImage(); }
 
-  modal.addEventListener("touchend", (e) => {
-    const endX = e.changedTouches[0].clientX;
-    const deltaX = endX - startX;
+// Close on outside click
+window.addEventListener('click', (e) => { if(e.target===modal) closeCarousel(); });
 
-    if (deltaX > 50) {
-      // Swipe right
-      prevSlide();
-    } else if (deltaX < -50) {
-      // Swipe left
-      nextSlide();
-    }
-  });
+// Keyboard navigation
+window.addEventListener("keydown",(e)=>{ if(modal.classList.contains("hidden")) return; if(e.key==="ArrowRight") nextSlide(); else if(e.key==="ArrowLeft") prevSlide(); else if(e.key==="Escape") closeCarousel(); });
+
+// Zoom, drag, pinch, momentum
+let scale=1,isDragging=false,startX,startY,currentX=0,currentY=0,velocityX=0,velocityY=0,lastX,lastY,lastTime,momentumFrame;
+let initialPinchDistance=null,lastScale=1;
+function resetZoom(){scale=1;currentX=0;currentY=0;updateTransform();}
+function updateTransform(){modalImg.style.transform=`translate(${currentX}px, ${currentY}px) scale(${scale})`;}
+modalImg.addEventListener("dblclick",()=>{scale=(scale===1?2:1);updateTransform();});
+function startDrag(x,y){if(scale<=1)return;isDragging=true;startX=x-currentX;startY=y-currentY;lastX=x;lastY=y;lastTime=Date.now();cancelAnimationFrame(momentumFrame);modalImg.style.cursor="grabbing";}
+function moveDrag(x,y){if(!isDragging)return;const now=Date.now();const deltaTime=now-lastTime;currentX=x-startX;currentY=y-startY;velocityX=(x-lastX)/deltaTime;velocityY=(y-lastY)/deltaTime;lastX=x;lastY=y;lastTime=now;applyBoundaries();updateTransform();}
+function endDrag(){if(!isDragging)return;isDragging=false;modalImg.style.cursor="grab";momentumScroll();}
+function momentumScroll(){if(Math.abs(velocityX)<0.01&&Math.abs(velocityY)<0.01)return;currentX+=velocityX*20;currentY+=velocityY*20;velocityX*=0.95;velocityY*=0.95;applyBoundaries();updateTransform();momentumFrame=requestAnimationFrame(momentumScroll);}
+function applyBoundaries(){const rect=modalImg.getBoundingClientRect();const container=modal.getBoundingClientRect();const maxOffsetX=(rect.width-container.width)/2;const maxOffsetY=(rect.height-container.height)/2;currentX=rect.width<=container.width?0:Math.min(maxOffsetX,Math.max(-maxOffsetX,currentX));currentY=rect.height<=container.height?0:Math.min(maxOffsetY,Math.max(-maxOffsetY,currentY));}
+
+// Mouse
+modalImg.addEventListener("mousedown",(e)=>startDrag(e.clientX,e.clientY));
+window.addEventListener("mousemove",(e)=>moveDrag(e.clientX,e.clientY));
+window.addEventListener("mouseup",endDrag);
+
+// Touch
+modalImg.addEventListener("touchstart",(e)=>{if(e.touches.length===1) startDrag(e.touches[0].clientX,e.touches[0].clientY); else if(e.touches.length===2){ initialPinchDistance=getPinchDistance(e.touches); lastScale=scale; }});
+modalImg.addEventListener("touchmove",(e)=>{if(e.touches.length===1) moveDrag(e.touches[0].clientX,e.touches[0].clientY); else if(e.touches.length===2&&initialPinchDistance){ const currentDistance=getPinchDistance(e.touches); scale=Math.min(4,Math.max(1,lastScale*(currentDistance/initialPinchDistance))); updateTransform(); }});
+modalImg.addEventListener("touchend",(e)=>{ if(e.touches.length===0){ endDrag(); initialPinchDistance=null; }});
+function getPinchDistance(touches){ const dx=touches[0].clientX-touches[1].clientX; const dy=touches[0].clientY-touches[1].clientY; return Math.sqrt(dx*dx+dy*dy); }
+
+// Swipe
+let touchStartX=0,touchEndX=0;
+modalImg.addEventListener("touchstart",(e)=>{ if(e.touches.length===1) touchStartX=e.touches[0].clientX; });
+modalImg.addEventListener("touchend",(e)=>{ touchEndX=e.changedTouches[0].clientX; const diffX=touchEndX-touchStartX; if(Math.abs(diffX)>50 && scale===1){ if(diffX<0) nextSlide(); else prevSlide(); } });
 </script>
 </body>
 </html>
