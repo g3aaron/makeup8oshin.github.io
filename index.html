@@ -5,6 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Oshin Beauty Salon</title>
   <script src="https://cdn.tailwindcss.com"></script>
+  <meta http-equiv="Cache-Control" content="max-age=31536000" />
   <style>
     html {
       scroll-behavior: smooth;
@@ -20,6 +21,7 @@
       width: calc(400px * 10);
       animation: scroll 10s linear infinite;
     }
+    
 
     .slide {
       height: 400px;
@@ -142,15 +144,15 @@
 
     
   </style>
-  
+
 </head>
+
 <body class="text-[#3d2f0f] font-sans">
 
   <!-- Fixed Top Bar -->
   <header class="fixed top-0 left-0 w-full z-50 flex justify-between items-center px-4 md:px-6 py-4 bg-[#3d2f0f] text-white h-16">
     <img src="oshin logo.webp" alt="Logo" class="h-10" />
     
-    <!-- Hamburger -->
     <!-- Hamburger -->
 <div id="hamburger" class="space-y-1 cursor-pointer md:hidden z-50 relative">
   <div class="w-6 h-0.5 bg-white bar"></div>
@@ -160,18 +162,20 @@
 
     <!-- Desktop Nav -->
     <nav class="hidden md:flex gap-6 text-sm font-semibold uppercase">
-      <a href="#services" class="hover:underline">Services</a>
+      <a href="#makeup" class="hover:underline">Makeup</a>
       <a href="#about" class="hover:underline">About</a>
-      <a href="#book" class="hover:underline">Book Now</a>
+      <a href="#academy" class="hover:underline">Academy</a>
+      <a href="#services" class="hover:underline">Services</a>
       <a href="#contact" class="hover:underline">Contact</a>
     </nav>
   </header>
 
   <!-- Mobile Nav -->
   <div id="mobile-menu" class="fixed top-16 right-0 w-full bg-[#3d2f0f] text-white text-center py-4 space-y-6 z-40 transform translate-x-full transition-transform duration-300 ease-in-out md:hidden">
-    <a href="#services" class="block hover:underline">Services</a>
+    <a href="#makeup" class="block hover:underline">Makeup</a>
     <a href="#about" class="block hover:underline">About</a>
-    <a href="#book" class="block hover:underline">Book Now</a>
+    <a href="#academy" class="block hover:underline">Academy</a>
+    <a href="#services" class="block hover:underline">Services</a>
     <a href="#contact" class="block hover:underline">Contact</a>
   </div>
 
@@ -179,16 +183,16 @@
   <div id="home-section">
     <section class="slider">
       <div class="slide-track">
-        <img rel="preload" src="official oshin logo.png" loading="lazy" class="slide object-cover" />
-        <img rel="preload" src="sushma akka.webp" loading="lazy" class="slide object-cover " />
-        <img rel="preload" src="DSC07991 copy.webp" loading="lazy" class="slide object-cover object-[50%_20%]" />
-        <img rel="preload" src="DSC07499 copy.webp" loading="lazy" class="slide object-cover object-[50%_20%]" />
-        <img rel="preload" src="sushma maternity.webp" loading="lazy" class="slide object-cover object-[50%_80%]" />
-        <img src="official oshin logo.png" loading="lazy" class="slide object-cover" />
-        <img src="sushma akka.webp" loading="lazy" class="slide object-cover" />
-        <img src="DSC07991 copy.webp" loading="lazy" class="slide object-cover object-[50%_20%]" />
-        <img src="DSC07499 copy.webp" loading="lazy" class="slide object-cover object-[50%_20%]" />
-        <img src="sushma maternity.webp" loading="lazy" class="slide object-cover object-[50%_80%]" />
+        <img rel="preload" src="official oshin logo.png" class="slide object-cover" loading="lazy" />
+        <img rel="preload" src="sushma akka 1.webp" class="slide object-cover " loading="lazy" />
+        <img rel="preload" src="christian 4.jpg" class="slide object-cover object-[50%_20%]" loading="lazy" />
+        <img rel="preload" src="south indian 1.jpg" class="slide object-cover object-[50%_20%]" loading="lazy" />
+        <img rel="preload" src="sushma akka 3.webp" class="slide object-cover object-[50%_80%]" loading="lazy" />
+        <img rel="preload" src="official oshin logo.png" class="slide object-cover" loading="lazy" />
+        <img rel="preload" src="sushma akka 1.webp" class="slide object-cover" loading="lazy" />
+        <img rel="preload" src="christian 4.jpg" class="slide object-cover object-[50%_20%]" loading="lazy" />
+        <img rel="preload" src="south indian 1.jpg" class="slide object-cover object-[50%_20%]" loading="lazy" />
+        <img rel="preload" src="sushma akka 3.webp" class="slide object-cover object-[50%_80%]" loading="lazy" />
       </div>
     </section>
 
@@ -209,27 +213,45 @@
       My Work
     </div>
 
-    <section id="services" class="scroll-mt-28 md:scroll-mt-20 bg-[#f9f8ee] pt-2 md:pt-0">
+    <section id="makeup" class="scroll-mt-28 md:scroll-mt-20 bg-[#f9f8ee] pt-2 md:pt-0">
       <div class="grid md:grid-cols-3 gap-6 px-4 md:px-6 py-12 text-center">
         <div class="bg-[#ddd3b5] p-6">
           <h2 class="text-2xl font-bold mb-4">BRIDAL MAKEUP</h2>
-          <a href="bridal.html">
-            <img src="DSC08009 copy.webp" alt="Bridal" class="mx-auto h-40 mb-4 cursor-pointer max-w-full" />
-          </a>
-          <p class="text-sm mb-4">Every bride deserves to feel radiant on her big day. Our bridal makeup enhances your natural beauty, ensuring a timeless, flawless look that lasts from the first photo to the final dance.</p>
+          <div class="relative group">
+         <a href="bridal.html">
+          <img src="christian 6.jpg" alt="Bridal" class="mx-auto h-40 mb-4 cursor-pointer max-w-full group-hover:brightness-50 transition duration-300" />
+          <span class="absolute inset-0 flex items-center justify-center text-white text-sm font-bold opacity-0 group-hover:opacity-100 transition duration-300">
+          View Gallery
+        </span>
+         </a>
         </div>
+          <p class="text-sm mb-4"><span class="font-medium text-[#7a2f2f]">(Tap the picture to view gallery)</span> <br>Every bride deserves to feel radiant on her big day. Our bridal makeup enhances your natural beauty, ensuring a timeless, flawless look that lasts from the first photo to the final dance.</p>
+        </div>
+
         <div class="bg-white p-6">
           <h2 class="text-2xl font-bold mb-4">TRADITIONAL LOOKS</h2>
-          <a href="editorial.html">
-            <img src="DSC07509 copy.webp" alt="Editorial" class="mx-auto h-40 mb-4 cursor-pointer max-w-full" />
-          </a>
-          <p class="text-sm mb-4">Every tradition tells a story — and so does your look. We create timeless traditional styles that bring out your inner glow while keeping your comfort in mind.</p>
+          <div class="relative group">
+         <a href="editorial.html">
+          <img src="south indian 3.jpg" alt="Bridal" class="mx-auto h-40 mb-4 cursor-pointer max-w-full group-hover:brightness-50 transition duration-300" />
+          <span class="absolute inset-0 flex items-center justify-center text-white text-sm font-bold opacity-0 group-hover:opacity-100 transition duration-300">
+          View Gallery
+        </span>
+         </a>
+         </div>
+          <p class="text-sm mb-4"><span class="font-medium text-[#7a2f2f]">(Tap the picture to view gallery)</span> <br>Every tradition tells a story — and so does your look. We create timeless traditional styles that bring out your inner glow while keeping your comfort in mind.</p>
         </div>
-        <div class="bg-[#3d2f0f] text-white p-6">
+
+        <div class="bg-[#ddd3b5] p-6">
           <h2 class="text-2xl font-bold mb-4">SPECIAL OCCASIONS</h2>
-          <a href="occasions.html">
-          <img src="ocassion cover.webp" alt="Occasions" class="mx-auto h-40 mb-4 cursor-pointer max-w-full" />
-          <p class="text-sm mb-4">Whether it’s a birthday, engagement, or celebration, we create the perfect makeup look tailored to your outfit, style, and event.</p>
+          <div class="relative group">
+         <a href="occasions.html">
+          <img src="sushma akka 5.webp" alt="Bridal" class="mx-auto h-40 mb-4 cursor-pointer max-w-full group-hover:brightness-50 transition duration-300" />
+          <span class="absolute inset-0 flex items-center justify-center text-white text-sm font-bold opacity-0 group-hover:opacity-100 transition duration-300">
+          View Gallery
+        </span>
+         </a>
+         </div>
+          <p class="text-sm mb-4"><span class="font-medium text-[#7a2f2f]">(Tap the picture to view gallery)</span> <br>Whether it’s a birthday, engagement, or celebration, we create the perfect makeup look tailored to your outfit, style, and event.</p>
         </div>
       </div>
     </section>
@@ -241,8 +263,8 @@
 
     <section id="about" class="scroll-mt-28 md:scroll-mt-20 zoom-container bg-[#3d2f0f] text-white pt-10 md:pt-0">
       <div class="zoom-text">
-        <h2 class="text-4xl md:text-5xl font-bold mb-6">ABOUT</h2>
-        <h3 class="text-md font-semibold uppercase mb-4">My Story</h3>
+        <h2 class="text-4xl md:text-5xl font-bold mb-6">Meet The Artist</h2>
+        <h3 class="text-3xl font-semibold mb-4">Ms. Amruta</h3>
         <p class="text-sm">My journey with beauty began long before Oshin Beauty Salon & Academy was created. What started as a simple love for makeup soon became a passion for helping people feel truly confident in their own skin.
 
           I still remember the first time I did a bridal look — seeing the joy and emotion in her eyes made me realize that makeup is so much more than colors and brushes. It is about trust, comfort, and creating a moment a person will never forget.
@@ -256,26 +278,224 @@
       </div>
     </section>
 
-    <section id="book" class="scroll-mt-20 zoom-container bg-[#f4f4e3] text-[#3d2f0f]">
-      <div class="zoom-image">
-        <img src="book.webp" alt="Book Image" />
+    <section id="academy" class="bg-[#f8f3ec] py-16 px-6 md:px-12 lg:px-20">
+  <div class="max-w-7xl mx-auto flex flex-col lg:flex-row gap-10 items-start">
+    
+    <!-- LEFT SIDE: Text + Button -->
+    <div class="lg:w-1/4 flex flex-col justify-center">
+      <h2 class="text-3xl font-semibold text-[#7a2f2f] mb-4">Courses Offered</h2>
+      <p class="text-gray-700 mb-8 leading-relaxed">
+        Explore courses offered by <span class="font-medium text-[#7a2f2f]">OSHIN Academy</span>
+      </p>
+      <a href="https://wa.me/918296708803?text=Hi%20I%20would%20like%20to%20enquire" class="bg-[#7a2f2f] text-white px-6 py-3 w-fit rounded-sm hover:bg-[#5e2121] transition">
+        Enquire Now
+      </a>
+    </div>
+    
+
+    <!-- RIGHT SIDE: Course Cards -->
+    <div class="lg:w-3/4 grid sm:grid-cols-2 xl:grid-cols-4 gap-6">
+      
+      <!-- Card 1 -->
+      <div class="bg-white shadow-md rounded-xl overflow-hidden">
+        <img src="Professional Makeup Artist Course.jpg" alt="Professional Makeup Artist Course" class="w-full h-60 object-cover">
+        <div class="p-5 text-[#7a2f2f]">
+          <h3 class="font-semibold mb-3 text-lg">Professional Makeup Artist Course</h3>
+          <ul class="text-sm space-y-1">
+            <li>🔸 Duration: 31 Days</li>
+            <li>🔸 Fee: INR 55,000</li>
+            <li>[Basic to advance Makeup/Hairstyling/Draping]</li>
+            <li>Eligible for all age group and any gender</li>
+          </ul>
+        </div>
       </div>
-      <div class="zoom-text">
-        <h2 class="text-4xl md:text-5xl font-bold mb-6">BOOK NOW</h2>
-        <h3 class="text-md font-semibold uppercase mb-4">Let’s create a look that’s uniquely yours.</h3>
-        <p class="text-sm font-semibold">Our Services:<br>
-• Bridal Makeup <br>
-• Traditional Makeup <br>
-• Special Occasion Makeup <br>
-• Saree Draping <br>
-• Hair Styling & Treatments <br>
-• Skin Care Services <br>
-• Makeup Classes & Workshops </p>
-        <a href="https://wa.me/919876543210?text=Hi%20I%20would%20like%20to%20book%20an%20appointment" target="_blank" rel="noopener noreferrer" class="mt-6 inline-flex items-center gap-2 text-md font-medium hover:underline">
-        ● TAP TO BOOK YOUR SLOT 
-        </a>
+
+      <!-- Card 2 -->
+      <div class="bg-white shadow-md rounded-xl overflow-hidden">
+        <img src="personal grroming.jpg" alt="Personal Grooming Makeup Workshop" class="w-full h-60 object-cover">
+        <div class="p-5 text-[#7a2f2f]">
+          <h3 class="font-semibold mb-3 text-lg">Personal Grooming Makeup Workshop</h3>
+          <ul class="text-sm space-y-1">
+            <li>🔸 Duration: 1 Day</li>
+            <li>🔸 Fee: INR 10,000</li>
+            <li>[Basic to advance Makeup/Hairstyling/Draping]</li>
+            <li>Eligible for all age group and any gender</li>
+          </ul>
+        </div>
       </div>
-    </section>
+
+      <!-- Card 3 -->
+      <div class="bg-white shadow-md rounded-xl overflow-hidden">
+        <img src="AirBrush Makeup.jpg" alt="Air Brush Makeup Workshop" class="w-full h-60 object-cover">
+        <div class="p-5 text-[#7a2f2f]">
+          <h3 class="font-semibold mb-3 text-lg">Air Brush Makeup Workshop</h3>
+          <ul class="text-sm space-y-1">
+            <li>🔸 Duration: 1 Day</li>
+            <li>🔸 Fee: INR 10,000</li>
+            <li>[Makeup using Air Brush]</li>
+            <li>Eligible for Makeup Artist only</li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- Card 4 -->
+      <div class="bg-white shadow-md rounded-xl overflow-hidden">
+        <img src="Basic and Advance Hairstyling.jpg" alt="Basic and Advance Hairstyling" class="w-full h-60 object-cover">
+        <div class="p-5 text-[#7a2f2f]">
+          <h3 class="font-semibold mb-3 text-lg">Basic and Advance Hairstyling</h3>
+          <ul class="text-sm space-y-1">
+            <li>🔸 Duration: 10 Days</li>
+            <li>🔸 Fee: INR 25,000</li>
+          </ul>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+  <!-- Stunning Looks + Creative Portfolio + Course Highlights Section -->
+<section class="w-full py-6 bg-[#ddd3b5] overflow-hidden">
+
+  <div class="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-[300px_1fr] gap-6">
+
+    <!-- Images Column -->
+    <div class="bg-[#ddd3b5] rounded-lg p-4 flex flex-col items-center text-center">
+      <h2 class="text-white text-3xl font-thin mb-2 tracking-wide"></h2>
+      <img src="brush.jpg" class="rounded-lg mb-4 w-full h-[220px] object-cover" />
+
+      <h2 class="text-white text-3xl font-thin mt-4 mb-2 tracking-wide"></h2>
+      <img src="creative portfolio.jpg" class="rounded-lg mb-2 w-full h-[220px] object-cover" />
+    </div>
+
+    <!-- Right Content -->
+    <div class="px-2 lg:px-6">
+      <h3 class="text-[#3d2f0f] text-xl font-semibold uppercase tracking-wide inline-block border-l-4 border-[#a80532] pl-3 mb-4">
+        Course Highlights
+      </h3>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-x-6 gap-y-2 text-[#3d2f0f] text-lg leading-tight">
+
+        <!-- Column 1 -->
+        <div class="space-y-2">
+          <p>➤ Skin preparation and priming</p>
+          <p>➤ Understanding the benefit of skincare</p>
+          <p>➤ Facial Anatomy (Identifying various shape of features)</p>
+          <p>➤ Tool & Accessories required</p>
+          <p>➤ Brushes – type/uses/cleaning techniques</p>
+          <p>➤ Identifying skin tone & skin types</p>
+          <p>➤ Color theory & product knowledge</p>
+          <p>➤ Colour correction</p>
+          <p>➤ Concealing skin flaws like pigmentation, spots, dark circles etc.</p>
+        </div>
+
+        <!-- Column 2 -->
+        <div class="space-y-2">
+          <p>➤ Base/Foundation types and application</p>
+          <p>➤ Contouring and Highlighting – Cream & Powder</p>
+          <p>➤ Basic of Eye Makeup</p>
+          <p>➤ Smokey Eyes – Black & coloured</p>
+          <p>➤ Party Eye makeup with glittery eyes</p>
+          <p>➤ Bridal Eye Makeup</p>
+          <p>➤ Cut Crease</p>
+          <p>➤ Multi-Coloured Eyes</p>
+          <p>➤ Wing Liner Application</p>
+        </div>
+
+        <!-- Column 3 -->
+        <div class="space-y-2">
+          <p>➤ Brazilian Makeup Technique</p>
+          <p>➤ Airbrush Makeup</p>
+          <p>➤ SFX</p>
+          <p>➤ Hair Prepping</p>
+          <p>➤ Hair Styling (Basic–Advanced)</p>
+          <p>➤ Saree & Lehenga Draping</p>
+          <p>➤ Social Media & Digital Marketing</p>
+          <p>➤ Certification</p>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</section>
+
+
+
+
+
+    <section id="services" class="w-full py-10 bg-[#f4efe8]">
+  <div class="max-w-7xl mx-auto grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 px-4">
+
+    <!-- LEFT SIDE CONTENT -->
+    <div class="col-span-1 flex flex-col justify-center mb-10 lg:mb-0">
+      <h2 class="text-3xl font-bold text-[#3d2f0f] mb-4 uppercase leading-snug">
+        Makeup Service by<br><span class="text-[#7a2f2f]">Amruta</span>
+      </h2>
+      <p class="text-[#3d2f0f] text-lg leading-relaxed mb-6">
+        Explore makeup services offered by Amruta
+      </p>
+      <a href="https://wa.me/918296708803?text=Hi%20I%20would%20like%20to%20enquire"
+         target="_blank"
+         class="bg-[#7a2f2f] hover:bg-[#5e2121] text-white px-6 py-3 text-lg rounded-sm transition-all">
+        Enquire Now
+      </a>
+    </div>
+
+    <!-- TOP THREE SERVICE CARDS -->
+    <div class="col-span-3 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+      <!-- Card 1 -->
+      <div class="bg-white rounded-xl shadow-xl p-4">
+        <img src="bridal makeup.jpg" class="rounded-lg mb-4 w-full h-[280px] md:h-[240px] object-cover">
+        <h4 class="text-lg font-bold text-[#3d2f0f]">Bridal HD Makeup</h4>
+        <ul class="text-sm text-[#3d2f0f] mt-2 space-y-1">
+          <li>🔸 INR: 17,000</li>
+          <li>🔸 Semi matte, simple and elegant bridal makeup</li>
+        </ul>
+      </div>
+
+      <!-- Card 2 -->
+      <div class="bg-white rounded-xl shadow-xl p-4">
+        <img src="premium hd makeup.webp" class="rounded-lg mb-4 w-full h-[280px] md:h-[240px] object-cover">
+        <h4 class="text-lg font-bold text-[#3d2f0f]">Bridal Premium HD Makeup</h4>
+        <ul class="text-sm text-[#3d2f0f] mt-2 space-y-1">
+          <li>🔸 INR: 20,000</li>
+          <li>🔸 Dewy, flawless and 3D enhanced look</li>
+        </ul>
+      </div>
+
+      <!-- Card 3 -->
+      <div class="bg-white rounded-xl shadow-xl p-4">
+        <img src="bridal airbrush makeup.jpg" class="rounded-lg mb-4 w-full h-[280px] md:h-[240px] object-cover">
+        <h4 class="text-lg font-bold text-[#3d2f0f]">Bridal Air Brush Makeup</h4>
+        <ul class="text-sm text-[#3d2f0f] mt-2 space-y-1">
+          <li>🔸 INR: 22,000</li>
+          <li>🔸 Natural, long-lasting and smoother appearance</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <!-- SECOND ROW (Groom + Non Bridal) -->
+  <div class="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-6 px-4 mt-10">
+
+    <!-- Groom Card -->
+    <div class="bg-white rounded-xl shadow-xl p-6">
+      <h4 class="text-lg font-bold text-[#3d2f0f] mb-4 uppercase">Groom Makeup Service</h4>
+      <p class="text-sm text-[#3d2f0f]">🔸 Basic: INR 5,500</p>
+    </div>
+
+    <!-- Non Bridal Card -->
+    <div class="bg-white rounded-xl shadow-xl p-6">
+      <h4 class="text-lg font-bold text-[#3d2f0f] mb-4 uppercase">Non Bridal Makeup Service</h4>
+      <ul class="text-sm space-y-1 text-[#3d2f0f]">
+        <li>🔸 Mature Skin - INR 6,000</li>
+        <li>🔸 Bridesmaid - INR 8,500</li>
+        <li>🔸 Semi HD - INR 12,000</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
 
     <section id="contact" class="scroll-mt-20 bg-[#3d2f0f] text-white text-center px-4 md:px-6 py-20">
       <h1 class="text-5xl md:text-7xl font-extrabold tracking-wide">OSHIN</h1>
@@ -305,13 +525,16 @@
           No. 47, Adonai's Corner Stone, Old, Police Station Road, near Noodle Cafe, <br> 
           Kothanur, Bengaluru, Karnataka 560077
         </a>
-        <a href="mailto:info@mysite.com" class="hover:underline block">https://g3aaron.github.io/makeup8oshin.github.io/</a><br>
+        <br>
+        <a href="mailto:info@mysite.com" class="hover:underline block">@https://makeup8oshin.com/</a><br>
         <a href="tel:8296708803" class="hover:underline block">+91 82967 08803</a>
         </address>
         </div>
       </footer>
+      <footer class="text-center p-4 text-sm text-white-500">© 2025 Oshin Salon</footer>
     </section>
   </div>
+
 
   <script>
   const aboutImage = document.getElementById('about-img');
@@ -375,32 +598,8 @@
       
     });
   });
-document.addEventListener("DOMContentLoaded", () => {
-  const slider = document.querySelector('.slide-track');
-  if (!slider) return;
-
-  // Pause/resume on hover (desktop)
-  slider.addEventListener('mouseenter', () => {
-    slider.style.animationPlayState = 'paused';
-  });
-  slider.addEventListener('mouseleave', () => {
-    slider.style.animationPlayState = 'running';
-  });
-
-  // Pause/resume on touch (mobile)
-  slider.addEventListener('touchstart', () => {
-    slider.style.animationPlayState = 'paused';
-  });
-  slider.addEventListener('touchend', () => {
-    slider.style.animationPlayState = 'running';
-  });
-});
-
 </script>
 
 
 </body>
 </html>
-
-
-
