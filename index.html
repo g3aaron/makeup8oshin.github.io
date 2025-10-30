@@ -256,34 +256,25 @@
       </div>
     </section>
 
-<section class="relative h-screen overflow-hidden">
+<!-- Works on all devices -->
+<section class="h-screen bg-fixed bg-center bg-cover" 
+         style="background-image: url('official%20oshin%20logo.png');">
+</section>
+
+<!-- iOS fallback (hidden on desktop/Android) -->
+<section class="relative h-screen overflow-hidden ios-bg hidden">
   <div class="absolute inset-0">
     <img src="images/official oshin logo.png"
          alt="Background"
-         class="w-full h-full object-cover fixed-image" />
+         class="w-full h-full object-cover" />
   </div>
 </section>
 
 <style>
-  .fixed-image {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    z-index: -1;
-    transform: translateZ(0);
-    will-change: transform;
-  }
-
-  /* Prevent iOS zoom glitch */
+  /* iOS detection + behavior */
   @supports (-webkit-touch-callout: none) {
-    .fixed-image {
-      position: fixed;
-      background-attachment: scroll;
-      object-fit: cover;
-    }
+    .bg-fixed { background-attachment: scroll !important; } /* disables buggy iOS fixed */
+    .ios-bg { display: block !important; } /* shows fallback */
   }
 </style>
 
@@ -656,6 +647,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
 </body>
 </html>
+
 
 
 
