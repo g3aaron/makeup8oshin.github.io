@@ -600,9 +600,36 @@
   });
 </script>
 
+  <script>
+document.addEventListener("DOMContentLoaded", () => {
+  const slideTrack = document.querySelector(".slide-track");
+  if (!slideTrack) return;
+
+  const pause = () => {
+    slideTrack.style.animationPlayState = "paused";
+    slideTrack.style.webkitAnimationPlayState = "paused"; // iOS support
+  };
+
+  const play = () => {
+    slideTrack.style.animationPlayState = "running";
+    slideTrack.style.webkitAnimationPlayState = "running";
+  };
+
+  // Desktop hover
+  slideTrack.addEventListener("mouseenter", pause);
+  slideTrack.addEventListener("mouseleave", play);
+
+  // Mobile touch — pause only while finger is down
+  slideTrack.addEventListener("touchstart", pause, { passive: true });
+  slideTrack.addEventListener("touchend", play);
+  slideTrack.addEventListener("touchcancel", play);
+});
+</script>
+
 
 </body>
 </html>
+
 
 
 
