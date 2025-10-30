@@ -256,32 +256,36 @@
       </div>
     </section>
 
-    <!-- Default (Android, Desktop) -->
-<section class="h-screen bg-fixed bg-center bg-cover ios-hidden"
-         style="background-image: url('official%20oshin%20logo.png');">
-</section>
-
-<!-- iOS Fallback -->
-<section class="relative h-screen overflow-hidden android-hidden ios-bg">
+<section class="relative h-screen overflow-hidden">
   <div class="absolute inset-0">
-    <img src="images/official oshin logo.png" 
-         alt="Background" 
-         class="w-full h-full object-cover" />
+    <img src="images/official oshin logo.png"
+         alt="Background"
+         class="w-full h-full object-cover fixed-image" />
   </div>
 </section>
 
 <style>
-  /* Hide/show based on platform */
-  .ios-hidden { display: block; }
-  .android-hidden { display: none; }
+  .fixed-image {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: -1;
+    transform: translateZ(0);
+    will-change: transform;
+  }
 
-  /* Detect iOS */
+  /* Prevent iOS zoom glitch */
   @supports (-webkit-touch-callout: none) {
-    .ios-hidden { display: none !important; }
-    .android-hidden { display: block !important; }
+    .fixed-image {
+      position: fixed;
+      background-attachment: scroll;
+      object-fit: cover;
+    }
   }
 </style>
-
 
 
     <section id="about" class="scroll-mt-28 md:scroll-mt-20 zoom-container bg-[#3d2f0f] text-white pt-10 md:pt-0">
@@ -652,6 +656,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
 </body>
 </html>
+
 
 
 
