@@ -256,21 +256,29 @@
       </div>
     </section>
 
-    <section class="relative h-screen overflow-hidden">
+    <!-- Default (Android, Desktop) -->
+<section class="h-screen bg-fixed bg-center bg-cover ios-hidden"
+         style="background-image: url('official%20oshin%20logo.png');">
+</section>
+
+<!-- iOS Fallback -->
+<section class="relative h-screen overflow-hidden android-hidden ios-bg">
   <div class="absolute inset-0">
-    <img src="images/official oshin logo.png" 
+    <img src="official%20oshin%20logo.png" 
          alt="Background" 
-         class="w-full h-full object-cover fixed-bg" />
+         class="w-full h-full object-cover" />
   </div>
 </section>
 
 <style>
-  /* Fake fixed background for iOS */
-  .fixed-bg {
-    position: fixed;
-    top: 0;
-    left: 0;
-    z-index: -1;
+  /* Hide/show based on platform */
+  .ios-hidden { display: block; }
+  .android-hidden { display: none; }
+
+  /* Detect iOS */
+  @supports (-webkit-touch-callout: none) {
+    .ios-hidden { display: none !important; }
+    .android-hidden { display: block !important; }
   }
 </style>
 
@@ -644,6 +652,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
 </body>
 </html>
+
 
 
 
