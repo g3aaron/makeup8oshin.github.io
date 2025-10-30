@@ -145,18 +145,6 @@
     
   </style>
 
-  <style>
-  /* Fix for iOS Safari background zoom issue */
-  @supports (-webkit-touch-callout: none) {
-    .ios-bg-fix {
-      background-attachment: scroll !important;
-      background-size: cover !important;
-      background-position: center !important;
-    }
-  }
-</style>
-
-
 </head>
 
 <body class="text-[#3d2f0f] font-sans">
@@ -268,9 +256,24 @@
       </div>
     </section>
 
-    <section class="h-screen bg-fixed bg-center bg-cover ios-bg-fix" 
-         style="background-image: url('images/official oshin logo.png');">
+    <section class="relative h-screen overflow-hidden">
+  <div class="absolute inset-0">
+    <img src="images/official oshin logo.png" 
+         alt="Background" 
+         class="w-full h-full object-cover fixed-bg" />
+  </div>
 </section>
+
+<style>
+  /* Fake fixed background for iOS */
+  .fixed-bg {
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: -1;
+  }
+</style>
+
 
 
     <section id="about" class="scroll-mt-28 md:scroll-mt-20 zoom-container bg-[#3d2f0f] text-white pt-10 md:pt-0">
@@ -641,6 +644,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
 </body>
 </html>
+
 
 
 
